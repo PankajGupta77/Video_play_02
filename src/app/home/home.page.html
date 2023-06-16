@@ -1,0 +1,28 @@
+<!-- <div class="todo-list-container">
+  <div *ngFor="let todo of data" class="todo-item">
+    <span>{{ todo.title }}</span>
+  </div>
+</div> -->
+
+<!-- <div class="card" *ngFor="let list of data">
+  <img [src]="list.icon" alt="Icon">
+  <h2>{{ list.title }}</h2>
+</div> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    Player
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="scroll-content">
+  <ion-card *ngFor="let card of data">
+    <ion-card-content>
+      <ion-img [src]="card.icon"></ion-img>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+      <ion-button expand="full" (click)="openUrl(card.url)">Read More</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
