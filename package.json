@@ -87,7 +87,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-admob-free": {
-        "ADMOB_APP_ID": "ca-app-pub-8867310177954132~7727106610"
+        "ADMOB_APP_ID": "ca-app-pub-7954042482936232~6320679690"
       },
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},

@@ -1,16 +1,100 @@
-ion-card {
-  margin-bottom: 20px;
+/* Add some padding to the ion-content */
+ion-content {
+  padding: 20px;
+  background-color: #f0f0f0; /* Set a light background color */
 }
 
-ion-img {
-  width: 100px;
-  height: 100px;
+/* Style the ion-card */
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color: #ffffff; /* Set a white background color */
+  overflow: hidden; /* Hide any content that overflows the card */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add smooth transitions */
 }
-// ion-content {
-//   --padding-top: 20px;
-//   --padding-bottom: 20px;
-// }
-.scroll-content {
-  height: 100%;
-  overflow-y: auto;
+
+/* Add a slight lift and scale effect on hover */
+ion-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the ion-card-title */
+ion-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333333; /* Set the title color */
+}
+
+/* Style the ion-img */
+ion-img {
+  width: 100%;
+  height: 200px; /* You can adjust the height to your liking */
+  border-radius: 15px 15px 0 0; /* Rounded corners only at the top */
+  object-fit: cover; /* Ensure the image covers the whole container */
+  transition: filter 0.2s ease-in-out; /* Add a smooth filter transition */
+}
+
+/* Add a slight brightness effect on hover */
+ion-img:hover {
+  filter: brightness(90%);
+}
+
+/* Style the ion-button */
+ion-button {
+  margin-top: 10px;
+  --background: #ff6f61; /* Change the button background color */
+  --color: #ffffff; /* Change the button text color */
+  --box-shadow: none; /* Remove the default box shadow */
+  border-radius: 50px; /* Make the button more rounded */
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  // padding: 12px 25px;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease-in-out; /* Add a smooth background color transition */
+}
+
+/* On button hover, darken the background color a bit */
+ion-button:hover {
+  --background: #e65c55;
+}
+
+/* Center the ion-button text */
+ion-button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the ion-card contents */
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+/* Assuming the class for the header is "header-container" */
+.header-container {
+  background-color: #007bff; /* Set the background color */
+  color: #ffffff; /* Set the text color */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Optionally, you can style the back button in the header */
+.header-container .back-button {
+  color: #ffffff; /* Set the back button color */
+}
+
+/* If you have a logo or other header elements, you can style them accordingly */
+.header-container .logo {
+  width: 40px;
+  height: 40px;
+  /* Add any other custom styling for your logo */
 }

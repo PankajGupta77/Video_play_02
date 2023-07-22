@@ -101,6 +101,6 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^5.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-admob-free" spec="0.22.0">
-        <variable name="ADMOB_APP_ID" value="ca-app-pub-8867310177954132~2477021653" />
+        <variable name="ADMOB_APP_ID" value="ca-app-pub-7954042482936232~6320679690" />
     </plugin>
 </widget>

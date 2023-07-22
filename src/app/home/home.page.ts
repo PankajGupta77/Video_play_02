@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
+// import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
+import { AdMobFree, AdMobFreeBannerConfig,AdMobFreeInterstitialConfig,AdMobFreeRewardVideoConfig} from '@ionic-native/admob-free/ngx';
+
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
@@ -9,7 +11,7 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/
   styleUrls: ['home.page.scss'],
 })
 // currentWeather: any;
-export class HomePage {
+export class HomePage implements OnInit {
   options: InAppBrowserOptions = {
     location: 'yes',//Or 'no'
     hidden: 'no', //Or  'yes'
@@ -48,11 +50,16 @@ data: any[]=[];
 
 
   }
+  ngOnInit() { 
+    this.showBannerAd()
+    this.ionViewDidLoad()
+  }
+
   // ca-app-pub-8867310177954132/7118571292
   
   showBannerAd() {
     const bannerConfig: AdMobFreeBannerConfig = {
-      id: 'ca-app-pub-8867310177954132/3714929166',
+      id: 'ca-app-pub-7954042482936232/2741183872',
       isTesting: false,
       autoShow: true,
     };
@@ -61,8 +68,22 @@ data: any[]=[];
       console.log('Banner ad is ready');
     });
   }
+  ionViewDidLoad(){
+    // if(this.platform.is('cordova')){
+    const interstitialConfig: AdMobFreeInterstitialConfig = {
+      id: 'ca-app-pub-7954042482936232/2839395375',
+      autoShow: true,
+      isTesting: false
+    };
+    this.admobFree.interstitial.config(interstitialConfig);
+    this.admobFree.interstitial.prepare().then(() => {
+      // interstitial ad is ready to be displayed
+      console.log("worker is ready")
+    }).catch((e) => console.log(e));
+  // }
+  }
   openUrl(url: string) {
-  
+    this.ionViewDidLoad()
     const options: InAppBrowserOptions = {
       location: 'yes',
       hidden: 'no',
