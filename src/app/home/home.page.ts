@@ -39,7 +39,7 @@ data: any[]=[];
   currentWeather: any;
   // target: string;
   constructor(private firestore: AngularFirestore,private admobFree: AdMobFree,private iab: InAppBrowser) {
-    this.firestore.collection('Hello').snapshotChanges().subscribe((hello:any) => {
+    this.firestore.collection('').snapshotChanges().subscribe((hello:any) => {
       this.data = hello.map((t:any) => {
           return { id: t.payload.doc.id, ...t.payload.doc.data() as {} };
       });
